@@ -94,14 +94,15 @@ function placeTodosOnTheDom(arrayOfTodos){
     console.log(todosTBody);
     for(let todo of arrayOfTodos){
         todosTBody.innerHTML += `
-            <tr data-testid="toDoItem" data-id="${todo.id}">
+            <tr data-testid="toDoItem" class="isRed" data-id="${todo.id}">
             <td>${todo.text}</td>
             <td>${todo.isComplete}</td>
-            <td><button data-testid="completeButton" onclick="todoMarkedForComplete(event)">Mark as Complete</button></td>
-            <td><button data-testid="deleteButton" onclick="deleteTodo(event)">Delete</button></td>
+            <td><button data-testid="completeButton" class="isGreen" onclick="todoMarkedForComplete(event)">Mark as Complete</button></td>
+            <td><button data-testid="deleteButton" class="isRed" onclick="deleteTodo(event)">Delete</button></td>
             </tr>
         `;
     }
 }
+
 
 getTodos()

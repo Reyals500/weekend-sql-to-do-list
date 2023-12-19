@@ -47,8 +47,12 @@ router.post("/", (req, res) => {
 
 router.put("/:id", (req, res) => {
     let todoId = req.params.id;
-    console.log("todoID", todoIdId);
-    let queryText;
+    console.log("todoID", todoId);
+    let queryText=`
+    UPDATE "todos"
+    SET "isComplete" = not "isComplete"
+    WHERE "id" = $1;
+  `;
     let queryParams = [todoId];
     pool
       .query(queryText, queryParams)
