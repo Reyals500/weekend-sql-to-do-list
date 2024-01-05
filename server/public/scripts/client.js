@@ -97,11 +97,18 @@ function placeTodosOnTheDom(arrayOfTodos){
             <tr data-testid="toDoItem" class="isRed" data-id="${todo.id}">
             <td>${todo.text}</td>
             <td>${todo.isComplete}</td>
-            <td><button data-testid="completeButton" class="isGreen" onclick="todoMarkedForComplete(event)">Mark as Complete</button></td>
+            <td><button data-testid="completeButton" class="isGreen" onclick="todoMarkedForComplete(event)" && "replaceRed()">Mark as Complete</button></td>
             <td><button data-testid="deleteButton" class="isRed" onclick="deleteTodo(event)">Delete</button></td>
             </tr>
         `;
     }
+}
+function replaceRed(){
+    array.forEach(element => {
+        if( isComplete === true){
+            classlist.replace(isRead, isGreen)
+        }
+    });
 }
 
 
